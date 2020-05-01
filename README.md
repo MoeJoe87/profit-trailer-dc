@@ -1,5 +1,7 @@
 # profit-trailer-docker
 
+This is a clone of Jakkie! All creedits to Jakkie!
+
 Profit Trailer Docker
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/jakkie/profit-trailer-docker.svg)](https://hub.docker.com/r/jakkie/profit-trailer-docker/)
