@@ -87,7 +87,7 @@ docker-compose down
 docker-compose up -d
 ```
 
-Donations are also very welcomed and appreciated:
+Donations for jakkie are also very welcomed and appreciated:
 
 BTC: 1JvpPGe22ViBYNiNrA3nwtg71Jta5vqXAi
 
