@@ -1,6 +1,8 @@
-# profit-trailer-docker
+# profit-trailer-dc
 
 This is a clone of Jakkie! All creedits to Jakkie!
+
+Donations to Jakkie are welcome `https://hub.docker.com/r/jakkie/profit-trailer-docker`
 
 Profit Trailer Docker
 
@@ -10,7 +12,7 @@ Profit Trailer Docker
 [![](https://images.microbadger.com/badges/version/moli87/profit-trailer-dc.svg)](https://microbadger.com/images/moli87/profit-trailer-dc/ "Get your own version badge on microbadger.com")
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/moli87/profit-trailer-dc.svg?label=build&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/profit-trailer-dc/)
 
-Compatible with Profit Trailer bot version : v2.2.12
+Compatible with Profit Trailer bot version : v2.4.27
 `https://wiki.profittrailer.com/doku.php?id=start`
 
 ## Install Docker
@@ -24,80 +26,58 @@ Compatible with Profit Trailer bot version : v2.2.12
 ### Run latest Profit Trailer version
 
 - Download and edit application.properties with your license key and exchange apis, other wise the bot will not start. See for `https://wiki.profittrailer.com/doku.php?id=start` reference.
-- To Run Container and replace `<your path>` with the full path where the application.properties file and data folder are.
+- To Run Container and replace `/path/to/""` with the full path where the application.properties file and data folder are.
+
+### docker
 
 ```bash
-docker run -v <your path>/application.properties:/app/ProfitTrailer/application.properties -v <your path>/data:/app/ProfitTrailer/data -p 8081:8081 --name pt jakkie/profit-trailer-docker
+docker create \
+  --name=pt-profit-trailer \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/Zurich \
+  -p 8081:8081 \
+  -v /path/to/profittrailer/application.properties:/app/ProfitTrailer/application.properties \
+  -v /path/to/profittrailer-data:/app/ProfitTrailer/data \
+  -v /path/to/profittrailer-logs:/app/ProfitTrailerlogs \
+  --restart unless-stopped \
+  moli87/profit-trailer-dc
 ```
 
-- After Profit Trailer is running browse to the url example `http://your-ip:8081`
+### docker-compose
+
+Compatible with docker-compose v3 schemas
 
 ```bash
-http://localhost:8081
+---
+version: '3'
+
+services:
+  profittrailer:
+    image: moli87/profit-trailer-dc
+    container_name: profit-trailer
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      - ./application.properties:/app/ProfitTrailer/application.properties
+      - ./data:/app/ProfitTrailer/data
+      - ./logs:/app/ProfitTrailerlogs
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
 ```
+If you like it, support appreciated!
 
-## DIY Guide
+BTC: 17cqx7P6aRn9egZfSkzbyNqKjd3Xm6W9T4
 
-### Installing the container
+BCH: qq020gjmrd83rfaut4fzrncc8ejlv32q4yuhnzgc5c
 
-- Build the container from the Dockerfile.
+BNB: bnb1m6fn76pplwf3pwem62ghcpryruu0kmnmrmsq22
 
-```bash
-docker build -t profit-trailer .
-```
+ETH: 0x4B2895914147787d0C15868F86c460aF6Fb45D91
 
-- To build with a specific Profit Trailer version from version v2.2.12 and later. Just change the Profit Trailer version to the version you want. To see which versions are available go to `https://github.com/taniman/profit-trailer/releases`
+LTC: LbvRzuBrF4eVrEC2zkHveQAxEyfaNBAa3j
 
-```bash
-docker build -t profit-trailer --build-arg PT_VERSION=2.2.12
-```
-
-### Running Profit Trailer with docker-compose
-
-- To install docker compose see `https://docs.docker.com/compose/install/`
-- Copy your configs files to where your docker-compose file is.
-- To start docker-compose to run the container.
-
-```bash
-docker-compose up -d
-```
-
-- After Profit Trailer is running check the Profit Trailer logs.
-
-```bash
-docker logs profittrailer
-```
-
-### Upgrade to new version
-
-- To upgrade to the latest Profit Trailer bot version, pull the latest version from docker hub.
-
-```bash
-docker-compose pull
-```
-
-- Stop and remove container.
-
-```bash
-docker-compose down
-```
-
-- Run it again.
-
-```bash
-docker-compose up -d
-```
-
-Donations for jakkie are also very welcomed and appreciated:
-
-BTC: 1JvpPGe22ViBYNiNrA3nwtg71Jta5vqXAi
-
-BCH: qzndnssc368k5h5ndg6h2d5pewmkycd50c9gxcpre6
-
-LTC: LWRDbKva26cATarA2PoTXTpKVJwCRCzbNC
-
-ETH: 0x13346b1DcF1f923bD357a1C8900C4475342e5255
-
-ZEC: t1YgFzgYdRymwJcwTBaS1harBf1sPakgbZ4
-
-DASH: XanACebtJkEZsfRaMahbnqCU4LPt42e3mE
+XMR: 45sS3GEkui1LosH14zvnvwChqEy8sK4pJXWAax1VvSD9BSN9qUsAuzsVwoTrvMjFndS9LpYpGBpCwY9JxifzxAW16wWsAAY
