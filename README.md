@@ -4,7 +4,8 @@ This is a clone of Jakkie! All creedits to Jakkie!
 
 Profit Trailer Docker
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/moli87/profit-trailer-dc.svg)](https://hub.docker.com/r/moli87/profit-trailer-dc/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/moli87/profit-trailer-dc.svg?style=label=pulls&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/profit-trailer-dc/)
+[![Docker Stars](https://img.shields.io/docker/stars/moli87/profit-trailer-dc.svg?style=label=stars&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/profit-trailer-dc/)
 [![](https://images.microbadger.com/badges/image/moli87/profit-trailer-dc.svg)](https://microbadger.com/images/moli87/profit-trailer-dc/ "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/moli87/profit-trailer-dc.svg)](https://microbadger.com/images/moli87/profit-trailer-dc/ "Get your own version badge on microbadger.com")
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/moli87/profit-trailer-dc.svg)](https://hub.docker.com/r/moli87/profit-trailer-dc/)
