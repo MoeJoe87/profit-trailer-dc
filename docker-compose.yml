@@ -3,11 +3,16 @@ version: '3'
 
 services:
   profittrailer:
-    build: .
-    container_name: profittrailer
+    image: moli87/profit-trailer-dc:latest
+    container_name: profit-trailer
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
     volumes:
       - ./application.properties:/app/ProfitTrailer/application.properties
       - ./data:/app/ProfitTrailer/data
+      - ./logs:/app/ProfitTrailerlogs
     restart: always
     ports:
       - "8081:8081"
