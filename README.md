@@ -26,7 +26,7 @@ Compatible with Profit Trailer bot version : v2.4.27
 ### Run latest Profit Trailer version
 
 - Download and edit application.properties with your license key and exchange apis, other wise the bot will not start. See for `https://wiki.profittrailer.com/doku.php?id=start` reference.
-- To Run Container and replace `/path/to/""` with the full path where the application.properties file and data folder are.
+- To create Container just replace `/path/to/""` with the full path where the application.properties file and data folder are.
 
 ### docker
 
