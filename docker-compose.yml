@@ -3,7 +3,7 @@ version: '3'
 
 services:
   profittrailer:
-    image: moli87/profit-trailer-dc:latest
+    image: moli87/profit-trailer-dc
     container_name: profit-trailer
     environment:
       - PUID=1000
