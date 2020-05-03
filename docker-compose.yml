@@ -13,6 +13,6 @@ services:
       - ./application.properties:/app/ProfitTrailer/application.properties
       - ./data:/app/ProfitTrailer/data
       - ./logs:/app/ProfitTrailerlogs
-    restart: always
+    restart: unless-stopped
     ports:
       - "8081:8081"
