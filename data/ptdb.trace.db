@@ -31,3 +31,4 @@ SELECT * FROM PROFITTRAILER.GENERAL_DATA_ENTITY LIMIT 1 [90079-197]
 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
 	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+	
